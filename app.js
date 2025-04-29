@@ -8,6 +8,8 @@ const PORT = 5000;
 connectDB();
 
 app.use(express.static("./public"))
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(expressLayout)
 app.set('layout', "./layouts/main")
 app.set('view engine', 'ejs')
