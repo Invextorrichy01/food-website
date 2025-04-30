@@ -6,7 +6,8 @@ const adminLayout = '../views/layouts/admin';
 
 router.get("/dashboard", async (req, res) => {
     try {
-        res.render('admin/dashboard', { layout: adminLayout})
+        const categories = await Category.find()
+        res.render('admin/dashboard', { categories, layout: adminLayout})
     } catch (error) {
         console.log(error);
     }
