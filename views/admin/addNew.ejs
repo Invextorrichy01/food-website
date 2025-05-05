@@ -29,9 +29,9 @@
       
         <label for="category">Category</label>
         <select id="category" name="category">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+          <% categories.forEach(category => { %>
+          <option value="<%= category.name %>"><%= category.name %></option>
+          <% }) %>
         </select>
 
         <label for="newPrice">New Price</label>
@@ -50,11 +50,11 @@
         <input type="file" id="image2" name="image2" placeholder="upload Image">
        
         <label>
-            <input type="checkbox" name="seasonal"> Seasonal
+            <input type="checkbox" name="seasonalItem"> Seasonal
           </label>
 <br>
           <label>
-            <input type="checkbox" name="new"> New
+            <input type="checkbox" name="newItem"> New
           </label>
       
         <input type="submit" value="Submit">
